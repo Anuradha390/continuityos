@@ -1,6 +1,8 @@
 # ContinuityOS
 
-ContinuityOS is a React/Vite workforce resilience dashboard reconstructed from the public preview.
+> ContinuityOS is a workforce resilience platform that stress-tests team capability, identifies single-person dependencies, and turns workforce risks into practical recovery plans.
+
+ContinuityOS helps operations and people leaders understand where critical knowledge lives, measure backup readiness, and simulate targeted recovery actions before a disruption occurs. The project combines a workforce twin, dependency analysis, resilience scoring, scenario planning, and a continuity copilot in one operational dashboard.
 
 ## Local development
 
