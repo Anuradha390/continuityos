@@ -1,14 +1,31 @@
 # ContinuityOS
 
-React / Express / tRPC / Drizzle starter, adapted from the Sandbox web-db-user template.
+ContinuityOS is a React/Vite workforce resilience dashboard reconstructed from the public preview.
 
-- `pnpm dev`: development server; honors `PORT` (default 3000).
-- `pnpm build` / `pnpm start`: build and serve `dist/index.js` and `dist/public/`.
-- `pnpm db:migrate`: apply checked-in migrations. `pnpm db:push`: generate and apply new schema changes.
-- `pnpm check` / `pnpm test`: types and application tests.
+## Local development
 
-Start with the Webdev skill's default-template guide. Platform login, storage, payments and service contracts live in its shared references; read the relevant capability before extending its helper.
+```bash
+pnpm install
+pnpm dev
+```
 
-`server/_core/publicConfig.ts` exposes only named public runtime values. Private keys stay server-side. The platform serves managed `/manus-storage/` assets; the application does not register a second proxy.
+## Render deployment
 
-Platform configuration is readable and editable through `webdev.config`. Default settings are initial values, not enforced constraints. The agent may modify the files, commands and configuration or follow the flexible guide for another stack.
+This repository is configured as a **Render Static Site** through [`render.yaml`](./render.yaml).
+
+- Build command: `corepack enable && pnpm install --frozen-lockfile && pnpm run build`
+- Publish directory: `dist`
+- SPA routes are rewritten to `index.html`
+- No fixed application port is configured; Render manages the static deployment
+
+To deploy, create a new **Static Site** in Render and connect the public GitHub repository:
+`Anuradha390/continuityos`. Render can also use the included Blueprint configuration.
+
+## Checks
+
+```bash
+pnpm run build
+pnpm run check
+```
+
+Platform-managed secrets, database credentials, generated dependencies, and Manus runtime internals are intentionally excluded.
