@@ -1,0 +1,15 @@
+import { defineConfig } from "/@fs/home/ubuntu/continuityos/node_modules/.vite/deps/drizzle-kit.js?v=129c25b0";
+const connectionString = process.env.DATABASE_URL;
+if (!connectionString) {
+  throw new Error("DATABASE_URL is required to run drizzle commands");
+}
+export default defineConfig({
+  schema: "./drizzle/schema.ts",
+  out: "./drizzle",
+  dialect: "mysql",
+  dbCredentials: {
+    url: connectionString
+  }
+});
+
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImRyaXp6bGUuY29uZmlnLnRzIl0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IGRlZmluZUNvbmZpZyB9IGZyb20gXCJkcml6emxlLWtpdFwiO1xuXG5jb25zdCBjb25uZWN0aW9uU3RyaW5nID0gcHJvY2Vzcy5lbnYuREFUQUJBU0VfVVJMO1xuaWYgKCFjb25uZWN0aW9uU3RyaW5nKSB7XG4gIHRocm93IG5ldyBFcnJvcihcIkRBVEFCQVNFX1VSTCBpcyByZXF1aXJlZCB0byBydW4gZHJpenpsZSBjb21tYW5kc1wiKTtcbn1cblxuZXhwb3J0IGRlZmF1bHQgZGVmaW5lQ29uZmlnKHtcbiAgc2NoZW1hOiBcIi4vZHJpenpsZS9zY2hlbWEudHNcIixcbiAgb3V0OiBcIi4vZHJpenpsZVwiLFxuICBkaWFsZWN0OiBcIm15c3FsXCIsXG4gIGRiQ3JlZGVudGlhbHM6IHtcbiAgICB1cmw6IGNvbm5lY3Rpb25TdHJpbmcsXG4gIH0sXG59KTtcbiJdLCJtYXBwaW5ncyI6IkFBQUEsU0FBUyxvQkFBb0I7QUFFN0IsTUFBTSxtQkFBbUIsUUFBUSxJQUFJO0FBQ3JDLElBQUksQ0FBQyxrQkFBa0I7QUFDckIsUUFBTSxJQUFJLE1BQU0sa0RBQWtEO0FBQ3BFO0FBRUEsZUFBZSxhQUFhO0FBQUEsRUFDMUIsUUFBUTtBQUFBLEVBQ1IsS0FBSztBQUFBLEVBQ0wsU0FBUztBQUFBLEVBQ1QsZUFBZTtBQUFBLElBQ2IsS0FBSztBQUFBLEVBQ1A7QUFDRixDQUFDOyIsIm5hbWVzIjpbXX0=
